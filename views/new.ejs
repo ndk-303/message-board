@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Mini Messages Board</title>
+        <link rel="stylesheet" href="/stylesheet/styles.css">
+    </head>
+    <body>
+        <h1><%= title %></h1>
+        <form method="POST" action="/new">
+            <div>
+                <label for="user">User Name</label>
+                <input type="text" name="user" id="user">
+            </div>
+
+            <div>
+                <label for="msg">Message</label>
+                <input type="text" name="text" id="msg">
+            </div>
+            <button type="submit">Send</button>
+        </form>
+    </body>
+</html>
