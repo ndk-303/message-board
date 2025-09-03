@@ -1,11 +1,12 @@
 const db = require('../db');
 const NotFoundError = require('../errors/NotFoundError');
 
-async function getAllMessages(req,res) {
+async function renderDashboard(req,res) {
     const messages = await db.getAllMessages();
 
     res.render('index', {title: 'Message Dashboard',messages: messages});
 }
+
 async function getMessage(req, res) {
     const { id } = req.params;
     const message = await db.getMessage(id);
@@ -32,4 +33,4 @@ async function addMessage(req, res) {
     res.redirect('/');
 }
 
-module.exports = { getAllMessages, getMessage, addMessage,getForm };
+module.exports = { renderDashboard, getMessage, addMessage,getForm };

@@ -1,8 +1,8 @@
 const { Router } = require('express');
 const indexRouter = Router();
-const { getAllMessages, getMessage, addMessage, getForm } = require('../controllers/messageController');
+const { renderDashboard, getMessage, addMessage, getForm } = require('../controllers/messageController');
 
-indexRouter.get('/', getAllMessages);
+indexRouter.get('/', renderDashboard);
 indexRouter.get('/new', getForm);
 indexRouter.get('/message/:id', getMessage);
 indexRouter.post('/new', addMessage);
