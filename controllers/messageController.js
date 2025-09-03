@@ -21,4 +21,15 @@ async function getForm(req, res) {
     res.render('new', {title: 'New Message'});
 }
 
-module.exports = { getAllMessages, getMessage, getForm };
+async function addMessage(req, res) {
+    const message = {
+        user: req.body.user,
+        text: req.body.text,
+        added: new Date()
+    }
+
+    db.addMessage(message);
+    res.redirect('/');
+}
+
+module.exports = { getAllMessages, getMessage, addMessage,getForm };
